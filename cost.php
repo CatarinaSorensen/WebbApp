@@ -26,6 +26,8 @@ echo <<<END
 END;
 if ($memberType == "Adult"){
    $cost = $cost + 250;
+}else if($memberType == "Nille"){
+   $cost = 0;
 }else{
    $cost = $cost + 150;
 }

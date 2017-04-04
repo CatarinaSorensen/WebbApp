@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Member</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1> Forestville Fitness Centre - Membership Options</h1>
+    <p>Welcome to Forestville Fitness Centre. Complete the form below to calculate your annual membership fee.</p>
+    <form action="cost.php" method="POST">
+        <label>First name:</label>
+        <input type="text" name="firstName" required/><br>
+        <label>Last name:</label>
+        <input type="text" name="lastName" required/><br>
+        <label>Phone number:</label>
+        <input type="tel" name="phoneNumber" required/>
+        <br><br><label>Membership type:</label><br>
+        <input type="radio" id="1" name="memberType" value="Adult" required/>
+        <label>Adult</label><br>
+        <input type="radio" id="2" name="memberType" value="Child" required/>
+        <label>Child</label><br>
+        <input type="radio" id="3" name="memberType" value="Consession" required/>
+        <label>Consession</label>
+        <br><br><label>Optional extras:</label><br>
+        <input name="extra[]" type="checkbox" id="1" value="Swimming pool access" />
+        <label for="1">Swimming pool access</label><br>
+        <input name="extra[]" type="checkbox" id="2" value="Spa and sauna access" />
+        <label for="2">Spa and sauna access</label><br>
+        <input name="extra[]" type="checkbox" id="3" value="Aerobic classes" />
+        <label for="3">Aerobic classes</label><br>
+        <input name="extra[]" type="checkbox" id="4" value="Aqua aerobic classes" />
+        <label for="4">Aqua aerobic classes</label><br>
+        <input name="extra[]" type="checkbox" id="5" value="Yoga classes" />
+        <label for="5">Yoga classes</label><br>
+        <input name="extra[]" type="checkbox" id="6" value="Pilates classes" />
+        <label for="6">Pilates classes</label>
+        <p>All memberships include access to gym facilities and expert advice from our professional staff.</p>
+        <input type="submit"/>
+        <input type="reset"/>
+    </form>
+</body>
+</html>

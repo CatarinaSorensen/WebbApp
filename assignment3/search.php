@@ -14,10 +14,12 @@
 <select name="studio">
   <option value="any">Any</option>
 <?php
+//connect to database
 $link = mysqli_connect('localhost', 'student', 'mmst12009','assignment3');
 $query = "SELECT studio_id, studio_name FROM studios";
 $result = mysqli_query($link, $query);
 mysqli_close($link);
+//fetching result from database
 while ($row = mysqli_fetch_array($result)) {
 echo <<<END
 <option value={$row['studio_id']}>{$row['studio_name']}</option>

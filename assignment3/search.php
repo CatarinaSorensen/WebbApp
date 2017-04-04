@@ -7,15 +7,23 @@
 <body>
 <h1>A1 Animation Art - Search</h1>
 <p>Search our database of animation art by supplying the following details.</p>
+<form action="results.php" method="POST">
 <label>Title:</label><br>
   <input type="text" name="title" /><br><br>
 <label>Studio:</label><br>
-<select>
+<select name="studio">
   <option value="any">Any</option>
-  <option value="walt">Walt Disney Animation Studios</option>
-  <option value="warner">Warner Brothers Animation</option>
-  <option value="hannah">Hannah Barbera</option>
-  <option value="20">20th Century Fox Television</option>
+<?php
+$link = mysqli_connect('localhost', 'student', 'mmst12009','assignment3');
+$query = "SELECT studio_id, studio_name FROM studios";
+$result = mysqli_query($link, $query);
+mysqli_close($link);
+while ($row = mysqli_fetch_array($result)) {
+echo <<<END
+<option value={$row['studio_id']}>{$row['studio_name']}</option>
+END;
+}
+?>
 </select>
 <br><br><label>Type:</label><br>
   <input type="radio" id="cel" name="type" value="Cel"/>
@@ -30,5 +38,6 @@
   $<input type="text" name="hprice"/><br><br>
 <input type="submit"/>
 <input type="reset"/>
+</form>
 </body>
 </html>
